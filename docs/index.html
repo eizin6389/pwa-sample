@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="theme-color" content="#F8F7F8">
+    <link rel="manifest" href="./manifest.json">
+    <title>PWA Sample</title>
+    <script>
+      // service workerの登録関係
+      if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('serviceWorker.js').then(function(registration) {
+          console.log('ServiceWorker registration successful with scope: ', registration.scope);
+      }).catch(function(err) {
+          console.log('ServiceWorker registration failed: ', err);
+      });
+      }
+      </script>  
+  </head>
+  <body>
+    <!-- ボタン表示エリア -->
+    <div>
+      <button id="button1">ボタン1</button>
+      <button id="button2">ボタン2</button>
+    </div>
+    <div>
+        <strong><span id="message">メッセージ</span></strong>
+    </div>
+    <script src="js/main.js"></script>
+  </body>
+</html>
